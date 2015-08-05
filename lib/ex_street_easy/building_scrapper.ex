@@ -55,7 +55,7 @@ defmodule ExStreetEasy.BuildingScrapper do
     tr 
     |> Floki.find(".price") 
     |> Enum.at(0) 
-    |> Floki.text
+    |> Floki.text |> String.strip |> String.strip ?\x{00A0}
   end
 
 end
